@@ -16,9 +16,10 @@ class sprite:
         self.rect = self.image.get_rect()
 
 
-MainButton = [sprite('MainButtons/Idle', 5),
-              sprite('MainButtons/Highlighted', 5),
-              sprite('MainButtons/Held', 5)]
+MainButton = {"idle": sprite('MainButtons/Idle', 5),
+              "sprite('MainButtons/Highlighted', 5),
+              sprite('MainButtons/Held', 5)}
+MainButtonType = 0
 
 running = True
 while running:
@@ -28,11 +29,11 @@ while running:
     mouseHeld = pygame.mouse.get_pressed()[0]
     mousePos = pygame.mouse.get_pos()
     
-    if MainButton[0].rect.collidepoint(mousePos) and mouseHeld:
-        print("touchy")
-    window.blit(MainButton[0].image, (0,0))
+    if MainButton[0].rect.collidepoint(mousePos):
+        if mouseHeld:
+            MainButtonType
 
-    #pygame.draw.rect(window, 'red', )
+    window.blit(MainButton[MainButtonType].image, (0,0))
 
     pygame.display.flip()
 
