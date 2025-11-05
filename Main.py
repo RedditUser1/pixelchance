@@ -42,9 +42,7 @@ while running:
             MainButtonType = "highlight"
     else: MainButtonType = "idle"
 
-    window.blit(MainButton[MainButtonType].image,
-                (width/2-(MainButton[MainButtonType].width/2),
-                 height/2-(MainButton[MainButtonType].height/2)))
+    window.blit(MainButton[MainButtonType].image, (0,0))
 
     pygame.display.flip()
 
