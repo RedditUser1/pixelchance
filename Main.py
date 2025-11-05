@@ -32,6 +32,8 @@ while running:
             running = False
     mouseHeld = pygame.mouse.get_pressed()[0]
     mousePos = pygame.mouse.get_pos()
+
+    window.fill(0,0,0)
     
     if MainButton[MainButtonType].rect.collidepoint(mousePos):
         if mouseHeld:
@@ -41,8 +43,8 @@ while running:
     else: MainButtonType = "idle"
 
     window.blit(MainButton[MainButtonType].image,
-                (width/2+(MainButton[MainButtonType].width/2),
-                 height/2+(MainButton[MainButtonType].height/2)))
+                (width/2-(MainButton[MainButtonType].width/2),
+                 height/2-(MainButton[MainButtonType].height/2)))
 
     pygame.display.flip()
 
