@@ -1,14 +1,29 @@
+""""""""""""""""""""""""""""""""""
+PixelChance Version 1.1
+
+Made by the oblivion and masterRahj
+
+"""""""""""""""""""""""""""""""""""
+#------------------------------
+# Imports and Initialization
+#------------------------------
 import pygame
 import random
 
 pygame.init()
 
+#------------------------------
+# Window setup
+#------------------------------
 width, height = 1000, 850
 window = pygame.display.set_mode((width, height))
 clock = pygame.time.Clock()
 
 pygame.display.set_caption("Pixel Chance")
 
+#------------------------------------------------
+# Buttons Sprite Class (For main Rolling Button)
+#------------------------------------------------
 class Sprite:
     def __init__(self, image, pos=(0, 0), size=5):
         self.original_image = pygame.image.load(f"{image}.png").convert_alpha()
@@ -28,14 +43,18 @@ class Sprite:
         self.pos = (self.x, self.y)
         self.rect.center = pos
 
-
+#-----------------------------
+# Main button setup
+#-----------------------------
 MainButton = {}
 for name in ["Idle", "Highlight", "Held"]:
     MainButton[name.lower()] = Sprite(f"MainButtons/{name}", (width / 2, height / 2), 5, )
 
-
-
 MainButtonType = "idle"
+
+#-----------------------------
+# Main loop
+#-----------------------------
 
 running = True
 while running:
