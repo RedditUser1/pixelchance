@@ -1,5 +1,5 @@
 """"""""""""""""""""""""""""""""""
-PixelChance Version 1.1
+PixelChance Version 1.2
 
 Made by the oblivion and masterRahj
 
